@@ -15,25 +15,48 @@ function topFunction() {
 }
 
 //modifier la section visites
-document.getElementById("visites").style.color="blue";
+//document.getElementById("visites").style.color="blue";
 
 
 // template
 
+let actus = 
+  [
+    {
+        titre: "Soutenez le château",
+        texte: "Avec la crise sanitaire, la fréquentation a chuté de 80%. Aidez le Château en faisant un don en ligne.",
+        image: "monalisa",
+        bouton : "Je fais un don"
+    },
+    {
+        titre: "Féérie des eaux",
+        texte: "Venez assister à notre féérie des eaux nocturne, un spectacle son et lumière qui ravira les petits et les grands.",
+        image: "feu-artifice",
+        bouton : "Plus d'informations"
+    },
+    {
+        titre: "Exposition de peinture",
+        texte: "Les plus grands maîtres de la peinture classique s'invitent au Château pour une exposition temporaire exceptionnelle.",
+        image: "peinture",
+        bouton : "Billetterie"
+    }
+];
+
 let template = document.querySelector("#listeactus");
 
-for (const d of actus) {					
-    let clone = document.importNode(template.content, true);     
+for (const d of actus) {	
 
+    let clone = document.importNode(template.content, true);     
     newContent = clone.firstElementChild.innerHTML					
-        .replace(/{{}}/g, d.image)
-        .replace(/{{}}/g, d.titre)				
-        .replace(/{{}}/g, d.bouton)
+        .replace(/{{image}}/g, d.image)
+        .replace(/{{titre}}/g, d.titre)
+        .replace(/{{texte}}/g, d.texte)				
+        .replace(/{{bouton}}/g, d.bouton)
 
         clone.firstElementChild.innerHTML = newContent
-
      
-        clone.firstElementChild.firstElementChild.style.backgroundImage="url('"+d.image+"')",		
+        //clone.firstElementChild.firstElementChild.style.backgroundImage="url('"+d.image+"')",	
+        //clone.firstElementChild.firstElementChild.style.backgroundImage="images/"+d.image+".jpg",		
         
     document.body.appendChild(clone);
     
