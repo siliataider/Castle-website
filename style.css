@@ -20,8 +20,7 @@ div {
     padding-bottom: 30px;
 }
 
-h1,
-h2 {
+h1,h2 {
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -43,24 +42,30 @@ p{
     font-size: 1.4em;
     line-height: 1.5em;
     max-width: 700px;
-    /*text-align: justify;
-    justify-content: center;*/
+    text-align: center;
 }
 
 #accueil {
-    background-image: url("/images/accueil.jpg");
+    background-image: url("images/accueil.jpg");
     background-size: 100% 100%;
     text-align: center;
 }
 
 #decouvrir {
     color: #777;
+}
+
+#texte-decouvrir {
     text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+
 }
 
 #actu {
-    background-image: url("/images/actu.jpg");
-    background-size: 100% 100%;
+    color: #666;
+    padding-bottom: 0%
+    
 }
 
 #visites{
@@ -141,6 +146,7 @@ ul {
 
 #visites li {
     margin: 10px 0;
+    color: #666;
 }
 
 #myBtn {
@@ -161,17 +167,37 @@ ul {
     height: 70px!important;
 }
 
+#BtnNavig {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(138, 136, 136);
+    color: white;
+    cursor: pointer;
+    padding: 0px;
+    border-radius: 4px;
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+}
+
 #myBtn:hover {
     background-color: #555;
 }
 
-#contenu-visites {
+
+.contenu-visites {
     max-width: 1000px;
     column-count: 2;
     column-gap: 100px;
     margin: 0 auto;
     font-family: Effra, Raleway, Calibri, Helvetica, Arial, sans-serif;
     font-size: 0.8em;
+    color: #666;
 }
 
 a[href^="mailto"]::before {
@@ -182,16 +208,17 @@ a[href^="tel"]::before {
     content: "📞 ";
 }
 
-#grid-container {
+.grid-container {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    padding: 10px;
-    margin: 0 5%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
 }
 
 .grid-item {
     background-color: rgb(20, 20, 20, 0.9);
-    margin: 0 30px;
+    margin-left:30%;
+    margin-right:30%;
     max-width: 400px;
 }
 
